@@ -14,5 +14,6 @@ package BTree is
 
 	procedure Print_Tree(T : in BTree); 
 	procedure Initialize_Tree(T : in out BTree; M : Integer; K : Integer);
+	procedure Insert(T : in out BTree; N : in BTree); 
 
 end BTree;

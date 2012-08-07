@@ -20,4 +20,11 @@ package body BTree is
 		Put_Line("Initializing BTree...");
 		T := new Node'(M, K, NULL, NULL, NULL);
 	end Initialize_Tree; 
+
+	-- Insert a node into the BTree
+	procedure Insert(T : in out BTree; N : in BTree) is 
+	begin 
+		Put_Line("To be written at home."); 
+	end Insert;	
+
 end BTree;
