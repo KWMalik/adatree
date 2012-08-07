@@ -12,6 +12,7 @@ package BTree is
 		Next : BTree; -- Next node at height
 	end record; 
 
+	procedure Print_Tree(T : in BTree); 
 	procedure Initialize_Tree(T : in out BTree; M : Integer; K : Integer);
 
 end BTree;
