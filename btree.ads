@@ -1,12 +1,18 @@
 with 	Ada.Text_IO; 
 use 	Ada.Text_IO; 
 
-package btree is 
+package BTree is 
+  	
+	procedure Hello; --Simple Hello World...
+
+private
 	type Node;
 	type BTree is access Node; 
 	type Node is record 
-		Key : Integer; 
-		Child : BTree; 
+	  	MinFactor: Integer; -- Minimization Factor
+		Key : Integer; -- Node Key Value
+		Child : BTree; -- Node Child 
+		Next : BTree; -- Next node at height
 	end record; 
-	procedure Hello; --Simple Hello World...
-end btree;
+
+end BTree;

@@ -1,6 +1,6 @@
-package body btree is
+package body BTree is
 	procedure Hello is 
 	begin
 		Ada.Text_IO.Put_Line("Hello World"); 
 	end Hello; 
-end btree;
+end BTree;
