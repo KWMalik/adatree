@@ -1,6 +1,8 @@
 package body BTree is
-	procedure Hello is 
+	
+	procedure Initialize_Tree(T : in out BTree ) is 
 	begin
-		Ada.Text_IO.Put_Line("Hello World"); 
-	end Hello; 
+		Put_Line("Initializing BTree...");
+	end Initialize_Tree; 
+
 end BTree;
