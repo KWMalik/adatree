@@ -9,6 +9,5 @@ begin
 	btree.Initialize_Tree(T, 2, 1);
 	btree.Print_Tree(T);
 	btree.Search(T, 2, S); 
-	Put_Line("Found Tree: " & Integer'Image(S.Key));
 end scaffold;
 
