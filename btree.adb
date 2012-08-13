@@ -1,5 +1,6 @@
-with btree; use btree;
+with adatree; use adatree.btree;
 package body BTree is
+
 
 	-- Prints basic information about the head of the 
 	-- tree given. 
@@ -10,18 +11,37 @@ package body BTree is
 		Put_Line("    Key: " & Integer'Image(T.Key)); 
 	end Print_Tree; 
 
+	-- Counts the keys given in a particular node, usefull for 
+	-- checking to make sure that the node is within the minimalization
+	-- factor range. 
+	procedure Count_Keys(N : in BTree) is 
+		i : Integer;
+		head : KeyAccess; 
+	begin 
+		head := N.HeadKey; 
+		iterate: 
+			while head.Next /= NULL loop 
+				i := i + 1; 
+			end loop iterate; 
+		return i;
+	end Count_Keys; 
+
 	-- Initializes a BTree structure node 
 	-- Params:
 	-- 	T == Access Type to Node (BTree)
 	-- 	M == Minimization Factor of btree
-	-- 	K == Initial Key
-	procedure Initialize_Tree(T : in out BTree; M : Integer; K : Integer) is 
+	-- 	K == Initial Key list
+	procedure Initialize_Tree(T : in out BTree; M : Integer; H : KeyAccess) is 
 	begin
 		Put_Line("Initializing BTree...");
 		if M < 2 then 
 			Put_Line("Minimalization Factor Must Be >= 2"); 
 		else 
-			T := new Node'(M, K, NULL, NULL, NULL);
+			T := new Node'(M, ROOT, H);
+			if Count_Keys(T) < t or Count_Keys(T) > (2*t+1) then 
+				Put_Line("Invalid Initial Key Count");
+				exit;
+			end if; 
 		end if;
 	end Initialize_Tree; 
 
